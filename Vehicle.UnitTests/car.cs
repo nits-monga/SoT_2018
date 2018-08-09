@@ -1,41 +1,27 @@
+using Moq;
 using Xunit;
 
 namespace Vehicle.UnitTests
 {
-    public class MockEngine : IEngine
-    {
-        public bool Started => throw new System.NotImplementedException(); // TODO Implement this method
-
-        public void Replace()
-        {
-            // TODO: Implement this method
-        }
-
-        public void Start()
-        {
-            // TODO: Implement this method
-        }
-
-        public void Stop()
-        {
-            // TODO: Implement this method
-        }
-    }
-
     public class car
     {
         [Fact]
         public void car_can_start()
         {
             // arrange
-            var bigEngine = new BigEngine(); // TODO: Replace this with the above mock
-            var subject = new Car(bigEngine);
+            var engineMock = new Mock<IEngine>();
+            var subject = new Car(engineMock.Object);
 
             // act
             subject.Start();
 
             // assert
-            Assert.True(subject.Engine.Started, "Car hasn't started");
+            engineMock.Verify(e => e.Start(), Times.Once());
+
+            // TODO: this line will fail, make it pass
+            //Assert.True(subject.Engine.Started, "Car hasn't started");
+
+            // TODO: Update all unit tests to use a mock
         }
 
         [Fact]
