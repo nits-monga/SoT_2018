@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SOT_2018_Exercise_1_Lib</id>
+    <version>$version$</version>
+    <title>SOT_2018_Exercise_1_Lib</title>
+    <authors>Promapp</authors>
+    <owners>Promapp</owners>
+    <licenseUrl>http://www.promapp.com</licenseUrl>
+    <projectUrl>http://www.promapp.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SOT 2018 Exercise 1 Library</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright Promapp Solutions Ltd 2018</copyright>
+  </metadata>
+  <files>
+    <file src=".\bin\Release\**\*.*" target="lib" />
+  </files>
+</package>
