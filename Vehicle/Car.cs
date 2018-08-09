@@ -2,13 +2,11 @@
 {
     public class Car
     {
-        // TODO: Refactor this to practice the 'Open/Closed' principle
-        // TODO: Update your unit tests accordingly
-
-        public BigEngine Engine;
-        public byte PetrolLitresConsumed;
-        public double MetresTraveled;
-        public bool Started;
+        // TODO: Refactor this to practice the 'Liskov's Substitution' Principle
+        // TODO: Refactor this further to practice the 'Interface segregation' Principle
+        public BigEngine Engine {get; private set;}
+        public byte PetrolLitresConsumed { get; private set; }
+        public double MetresTraveled { get; private set; }
 
         public Car()
         {
@@ -19,29 +17,17 @@
 
         public void Start()
         {
-            if (Started)
-            {
-                throw new CarAlreadyStartedException();
-            }
-            Started = true;
-
-            // TODO: Refactor this to practice the 'Single Responsibility' principle
-            // TODO: Update your unit tests accordingly
+            Engine.Start();
         }
 
         public void Stop()
         {
-            if (!Started)
-            {
-                throw new CarNotStartedException();
-            }
-
-            Started = false;
+            Engine.Stop();
         }
 
         public void MoveForward()
         {
-            if (!Started)
+            if (!Engine.Started)
             {
                 throw new CarNotStartedException();
             }
@@ -52,7 +38,7 @@
 
         public void MoveBackward()
         {
-            if (!Started)
+            if (!Engine.Started)
             {
                 throw new CarNotStartedException();
             }

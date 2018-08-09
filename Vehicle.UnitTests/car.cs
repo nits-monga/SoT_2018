@@ -14,7 +14,7 @@ namespace Vehicle.UnitTests
             subject.Start();
 
             // assert
-            Assert.True(subject.Started, "Car hasn't started");
+            Assert.True(subject.Engine.Started, "Car hasn't started");
         }
 
         [Fact]

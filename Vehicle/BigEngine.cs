@@ -5,6 +5,8 @@ namespace Vehicle
     public class BigEngine
     {
         private readonly double _capacity;
+
+        public bool Started { get; private set; }
         
         public BigEngine()
         {
@@ -14,6 +16,25 @@ namespace Vehicle
         public void Replace()
         {
             throw new NotImplementedException();
+        }
+
+        public void Start()
+        {
+            if (Started)
+            {
+                throw new CarAlreadyStartedException();
+            }
+            Started = true;
+        }
+
+        public void Stop()
+        {
+            if (!Started)
+            {
+                throw new CarNotStartedException();
+            }
+
+            Started = false;
         }
     }
 }
