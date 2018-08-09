@@ -2,15 +2,33 @@ using Xunit;
 
 namespace Vehicle.UnitTests
 {
+    public class MockEngine : IEngine
+    {
+        public bool Started => throw new System.NotImplementedException(); // TODO Implement this method
+
+        public void Replace()
+        {
+            // TODO: Implement this method
+        }
+
+        public void Start()
+        {
+            // TODO: Implement this method
+        }
+
+        public void Stop()
+        {
+            // TODO: Implement this method
+        }
+    }
+
     public class car
     {
-        // TODO: Update all unit tests inline with the dependency inversion principle
-
         [Fact]
         public void car_can_start()
         {
             // arrange
-            var bigEngine = new BigEngine();
+            var bigEngine = new BigEngine(); // TODO: Replace this with the above mock
             var subject = new Car(bigEngine);
 
             // act
@@ -42,7 +60,7 @@ namespace Vehicle.UnitTests
         public void car_can_move_forward_and_consumes_petrol(int timesToMoveForward, int expectedPetrolLitresConsumed)
         {
             // arrange
-            var bigEngine = new BigEngine();
+            var bigEngine = new BigEngine();  // TODO: Replace this with the above mock
             var subject = new Car(bigEngine);
             subject.Start();
 
