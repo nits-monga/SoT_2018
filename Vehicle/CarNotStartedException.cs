@@ -1,6 +1,4 @@
-using System;
-
-namespace Exercise_1_Lib
+namespace Vehicle
 {
     [System.Serializable]
     public class CarNotStartedException : System.Exception

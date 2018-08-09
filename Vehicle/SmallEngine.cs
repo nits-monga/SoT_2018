@@ -1,6 +1,6 @@
 using System;
 
-namespace Exercise_1_Lib
+namespace Vehicle
 {
     public class SmallEngine
     {
@@ -14,16 +14,6 @@ namespace Exercise_1_Lib
         public void Replace()
         {
             throw new NotImplementedException();
-        }
-
-        public void Start()
-        {
-
-        }
-
-        public void Stop()
-        {
-
         }
     }
 }

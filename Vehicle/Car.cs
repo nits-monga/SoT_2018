@@ -1,26 +1,21 @@
-﻿namespace Exercise_1_Lib
+﻿namespace Vehicle
 {
     public class Car
     {
-        private readonly BigEngine _engine;
+        // TODO: Refactor this to practice the 'Open/Closed' principle
+        // TODO: Update your unit tests accordingly
 
-        private byte _petrolLitresConsumed;
+        public BigEngine Engine;
+        public byte PetrolLitresConsumed;
+        public double MetresTraveled;
+        public bool Started;
 
         public Car()
         {
             MetresTraveled = 0;
-            _petrolLitresConsumed = 0;
-            Started = false;
-
-            // TODO: Refactor this to practice the 'Open/Closed' principle
-            // TODO: Update your unit tests accordingly
-            _engine = new BigEngine();
+            PetrolLitresConsumed = 0;
+            Engine = new BigEngine();
         }
-
-        public bool Started { get; private set; }
-        public double MetresTraveled { get; private set; }
-
-        public int PetrolLitresConsumed => _petrolLitresConsumed;
 
         public void Start()
         {
@@ -29,7 +24,6 @@
                 throw new CarAlreadyStartedException();
             }
             Started = true;
-            _engine.Start();
 
             // TODO: Refactor this to practice the 'Single Responsibility' principle
             // TODO: Update your unit tests accordingly
@@ -43,7 +37,6 @@
             }
 
             Started = false;
-            _engine.Stop();
         }
 
         public void MoveForward()
@@ -53,8 +46,8 @@
                 throw new CarNotStartedException();
             }
 
-            MetresTraveled+=0.1;
-            _petrolLitresConsumed++;
+            MetresTraveled +=0.1;
+            PetrolLitresConsumed++;
         }
 
         public void MoveBackward()
@@ -65,12 +58,12 @@
             }
 
             MetresTraveled-=0.1;
-            _petrolLitresConsumed++;
+            PetrolLitresConsumed++;
         }
 
         public void Service()
         {
-            _engine.Replace();
+            Engine.Replace();
         }
     }
 }
