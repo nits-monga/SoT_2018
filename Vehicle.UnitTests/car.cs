@@ -10,7 +10,8 @@ namespace Vehicle.UnitTests
         public void car_can_start()
         {
             // arrange
-            var subject = new Car();
+            var bigEngine = new BigEngine();
+            var subject = new Car(bigEngine);
 
             // act
             subject.Start();
@@ -41,7 +42,8 @@ namespace Vehicle.UnitTests
         public void car_can_move_forward_and_consumes_petrol(int timesToMoveForward, int expectedPetrolLitresConsumed)
         {
             // arrange
-            var subject = new Car();
+            var bigEngine = new BigEngine();
+            var subject = new Car(bigEngine);
             subject.Start();
 
             // act

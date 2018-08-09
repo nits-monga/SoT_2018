@@ -6,13 +6,11 @@
         public byte PetrolLitresConsumed { get; private set; }
         public double MetresTraveled { get; private set; }
 
-        public Car()
+        public Car(IEngine engine)
         {
             MetresTraveled = 0;
             PetrolLitresConsumed = 0;
-
-            // TODO: Refactor this to practice the 'Dependency Inversion' Principle
-            Engine = new BigEngine();
+            Engine = engine;
         }
 
         public void Start()
