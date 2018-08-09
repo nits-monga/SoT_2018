@@ -2,7 +2,7 @@ using System;
 
 namespace Vehicle
 {
-    public class BigEngine
+    public class BigEngine : IEngine
     {
         private readonly double _capacity;
 

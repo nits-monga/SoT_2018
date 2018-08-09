@@ -2,9 +2,7 @@
 {
     public class Car
     {
-        // TODO: Refactor this to practice the 'Liskov's Substitution' Principle
-        // TODO: Refactor this further to practice the 'Interface segregation' Principle
-        public BigEngine Engine {get; private set;}
+        public IEngine Engine {get; private set;}
         public byte PetrolLitresConsumed { get; private set; }
         public double MetresTraveled { get; private set; }
 
@@ -12,6 +10,8 @@
         {
             MetresTraveled = 0;
             PetrolLitresConsumed = 0;
+
+            // TODO: Refactor this to practice the 'Dependency Inversion' Principle
             Engine = new BigEngine();
         }
 

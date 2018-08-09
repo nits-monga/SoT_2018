@@ -4,6 +4,8 @@ namespace Vehicle.UnitTests
 {
     public class car
     {
+        // TODO: Update all unit tests inline with the dependency inversion principle
+
         [Fact]
         public void car_can_start()
         {
