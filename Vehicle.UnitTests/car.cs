@@ -52,5 +52,44 @@ namespace Vehicle.UnitTests
             // assert
             Assert.Equal(expectedPetrolLitresConsumed, subject.PetrolLitresConsumed);
         }
+        [Theory]
+        [InlineData(4, 4)]
+        public void car_can_move_forward_and_consumes_lesspetrol(int timesToMoveForward, int expectedPetrolLitresConsumed)
+        {
+            // arrange
+            var subject = new Car();
+            subject.Start();
+
+            // act
+            while (timesToMoveForward > 0)
+            {
+                subject.MoveForward();
+                timesToMoveForward--;
+            }
+
+            // assert
+            Assert.Equal(expectedPetrolLitresConsumed, subject.PetrolLitresConsumed);
+        }
+        [Fact]
+        public void car_can_move()
+        {
+            // TODO: arrange
+            // TODO: act
+            // TODO: assert
+        }
+        [Fact]
+        public void car_has_steering()
+        {
+            // TODO: arrange
+            // TODO: act
+            // TODO: assert
+        }
+        [Fact]
+        public void car_has_4wheels_forachange()
+        {
+            // TODO: arrange
+            // TODO: act
+            // TODO: assert
+        }
     }
 }
